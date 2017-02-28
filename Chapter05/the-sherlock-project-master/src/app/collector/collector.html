@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <h4>{{caption}}</h4>
+  </div>
+  <div class="row">
+    <ul class="list-unstyled">
+      <li *ngFor="let headline of headlines; let i=index; let o=odd;">
+        <div [hidden]="cb.checked" class="row" [style.backgroundColor]="o ? 'Khaki':'ivory'">
+          <input type="checkbox" #cb
+                 (change)="onChange(headline, cb.checked)">
+          {{i+1}} - {{headline.title}}
+          <a href="{{headline.link}}">(read more)</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

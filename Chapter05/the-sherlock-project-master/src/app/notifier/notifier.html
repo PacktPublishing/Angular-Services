@@ -1,0 +1,36 @@
+<h2>Notifier</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <h3>Current Settings</h3>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <input #cb type="checkbox" [(ngModel)]="model.notify"
+                 (ngModelChange)="updateDB(model.notify)"/>
+        </span>
+        <label class="form-control">Find, Rate & Save News </label>
+      </div><!-- /input-group -->
+
+      <div class="input-group">
+        <label class="input-group-addon">notify me via:</label>
+        <select class="form-control" [(ngModel)]="model.notifier"
+                (ngModelChange)="updateDB(model.notifier)">
+          <option *ngFor="let n of notifier" [value]="n">{{n}}</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label class="input-group-addon">news threshold:</label>
+        <select class="form-control" [(ngModel)]="model.threshold"
+                (ngModelChange)="updateDB(model.threshold)">
+          <option *ngFor="let t of threshold" [value]="t">{{t}}</option>
+        </select>
+      </div>
+    </div><!-- /.col-lg-3 -->
+    <div class="col-lg-9">
+      <h3>Suggested News</h3>
+      <div *ngFor="let item of ratedNews|async">
+        {{item.title}} - <a href="{{item.link}}">more</a>
+      </div>
+    </div><!-- /.col-lg-9 -->
+  </div><!-- /.row -->
+</div>
