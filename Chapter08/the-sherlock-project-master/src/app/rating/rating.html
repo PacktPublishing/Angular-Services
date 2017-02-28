@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-3">
+    <h3>Hot Trends</h3>
+    <ul>
+      <li *ngFor="let trend of trends">
+        {{trend.keyword}} ({{trend.rank}})
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <h3>Collected News (Collector Component)</h3>
+    <div *ngFor="let item of collectedNews|async; let o=odd;">
+      <div [style.backgroundColor]="o ? 'Khaki':'ivory'">
+        {{item.description}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <h3>Ranked News (Rating Component)</h3>
+    <div *ngFor="let item of ratedNews| orderBy:['rank']:false">
+      {{item.title}} - {{item.rank}} - <a href="{{item.link}}">more</a>
+    </div>
+  </div>
+</div>

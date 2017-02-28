@@ -1,0 +1,13 @@
+<div *ngIf="ModalIsVisible" class="modal fade show in danger" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-body modal-content">
+      <button type="button" class="close" data-dismiss="modal" (click)="hideModal()">&times;</button>
+      <div class="mynetwork"
+           [visNetwork]="visNetwork"
+           [visNetworkData]="visNetworkData"
+           [visNetworkOptions]="visNetworkOptions"
+           (initialized)="networkInitialized()">
+      </div>
+    </div>
+  </div>
+</div>

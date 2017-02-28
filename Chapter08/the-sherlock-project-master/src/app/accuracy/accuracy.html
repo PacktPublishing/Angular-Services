@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Prevention</div>
+        <div class="panel-body">
+          <p>This is where we prevent incidents in our application</p>
+        </div>
+        <!-- Table -->
+        <table class="table">
+          <thead><tr>
+            <th>#</th>
+            <th>Description</th>
+            <th>Hits</th>
+          </tr></thead>
+          <tbody>
+          <tr *ngFor="let p of prevents; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>
+              <span class="desc">{{p.description}}</span><br>
+              <span class="file">{{p.file}}</span>
+              <span class="line_no">: {{p.line}}</span>
+            </td>
+            <td>{{p.hits}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Cure
+          <button type="button" class="btn btn-default btn-xs pull-right" (click)="newCure()">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="panel-body">
+          <p>This is where we cure incidents in our application</p>
+        </div>
+        <!-- Table -->
+        <table class="table">
+          <thead><tr>
+            <th class="text-center">id</th>
+            <th>Description</th>
+            <th></th>
+          </tr></thead>
+          <tbody>
+          <tr *ngFor="let c of items">
+            <th scope="row" class="col-md-4"><span class="id">{{c.$key}}</span></th>
+            <td class="col-md-7" contenteditable="true" (keyup.enter)="editCure(c.$key, $event)">
+              {{c.description}}
+            </td>
+            <td class="col-md-1">
+              <button class="btn btn-default btn-xs pull-right" type="button"
+                      (click)="deleteCure(c.$key)">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

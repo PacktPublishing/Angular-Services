@@ -1,0 +1,159 @@
+.cluster {
+  margin-top: 20px;
+}
+
+.cluster h1{
+  color: #6d19f4;
+  font-size: xx-large;
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+.spine{
+  background:url(http://dummyimage.com/1x1/6d19f4/6d19f4.gif) top center repeat-y;
+  width:1024px;
+  padding:20px 0;
+  margin:0 auto 20px auto;
+  overflow:hidden;
+  list-style:none;
+  position:relative;
+}
+
+.spine:before, /* The dot */
+.spine:after{ /* The arrow */
+  content:" ";
+  width:10px;
+  height:10px;
+  display:block;
+  background: #6d19f4;
+  position:absolute;
+  top:0;
+  left:50%;
+  margin-left:-5px;
+  -webkit-border-radius:20px;
+  -moz-border-radius:20px;
+  border-radius:20px;
+}
+
+.spine:after{
+  margin-left:-7px;
+  background:none;
+  border:7px solid transparent;
+  border-top-color: #6d19f4;
+  width:0;
+  height:0;
+  top:auto;
+  bottom:-7px;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
+}
+
+.spine li:before,
+.spine li:after{
+  content:" ";
+  width:50px;
+  height:1px;
+  background: #6d19f4;
+  position:absolute;
+  left:100%;
+  top:50%;
+}
+
+.spine li:nth-of-type(even){
+  float:right;
+  text-align:left;
+}
+
+.spine li:nth-of-type(even):after{ /* Move branches */
+  background: #6d19f4;
+  left:auto;
+  right:100%;
+}
+
+.spine li:nth-of-type(odd),
+.spine li:nth-of-type(even){
+  margin:-20px 0 0 0;
+}
+
+.spine li{
+  position:relative;
+  clear:both;
+  float:left;
+  width:463px;
+  padding:10px;
+  background: #e9e9fe;
+  border:1px solid #9f9ed8;
+  text-align:right;
+  margin:0 0 10px 0;
+
+  -webkit-border-radius:2px;
+  -moz-border-radius:2px;
+  border-radius:2px;
+  -webkit-box-shadow:0 1px #fff inset;
+  -moz-box-shadow:0 1px #fff inset;
+  box-shadow:0 1px #fff inset;
+}
+
+.spine h1 {
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+  margin-top: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    #4040bb,
+    #4040bb 10px,
+    #2233aa 10px,
+    #2233aa 20px
+  );
+}
+
+
+ul.tree, ul.tree ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.tree ul {
+  margin-left: 10px;
+}
+
+ul.tree li {
+  margin: 0;
+  padding: 5px;
+  line-height: 17px;
+  color: #369;
+}
+.tree h2 {
+  color: #248;
+}
+
+.tree h4 {
+  color: #50f;
+  margin-top: 20px;
+}
+
+.node {
+  background: #ecf;
+  margin: 5px;
+  border-top: 1px dotted #aab;
+  border-bottom: 1px dotted #aab;
+}
+
+.node-details {
+  background: #edf;
+  margin: 5px 20px;
+}
+
+.phrases{
+  background: #eeefff;
+}
+
+.phrases h5{
+  background: #ddf;
+  padding: 5px;
+}
+

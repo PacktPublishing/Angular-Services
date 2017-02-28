@@ -1,0 +1,21 @@
+.id {
+  color: #2233aa;
+  background-color: #f1f1ff;
+  font-size: x-small;
+  padding: 4px;
+  float: right;
+}
+
+.desc {
+  color: #666;
+  font-size: small;
+}
+
+.line_no {
+  color: #777;
+}
+
+.file {
+  color: #888;
+  font-weight: bold;
+}

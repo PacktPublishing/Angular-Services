@@ -1,0 +1,14 @@
+<div class="row general">
+  <div class="col-md-4 wing move-left">
+    <h3 *ngIf="general.corpusSize">The report is generated based on a corpus with <strong>{{general.corpusSize}}</strong> entries</h3>
+  </div>
+  <div class="col-md-4 circle">
+    <div class="circle-inner">
+      <h1>{{general.mainKeyword}}</h1>
+      <p>This report is generated for evidences found around '{{general.mainKeyword}}'.</p>
+    </div>
+  </div>
+  <div class="col-md-4 wing move-right">
+    <h3 *ngIf="general.vocabularySize">and there are <strong>{{general.vocabularySize}}</strong> words in the vocabulary</h3>
+  </div>
+</div>
