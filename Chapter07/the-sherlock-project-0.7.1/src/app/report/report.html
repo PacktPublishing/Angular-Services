@@ -1,0 +1,35 @@
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <a data-toggle="tab" href="#config">
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+      </a>
+    </li>
+    <li *ngFor="let report of items">
+      <a data-toggle="tab" href="#{{report.$key}}">
+        {{report.templateName}}
+        <button *ngIf="report.printButton" type="button" class="btn btn-default btn-xs"
+                (click)="printReport(report.$key)">
+        <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+      </button>
+      </a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div id="config" class="tab-pane fade in active">
+      <sh-report-template *ngFor="let template of items"
+                          [template]="template"
+                          (onSaveReportTemplate)="onSaveReportTemplate($event)"
+                          (onDeleteReportTemplate)="onDeleteReportTemplate($event)">
+      </sh-report-template>
+      <button type="button" class="btn btn-default" (click)="newReportTemplate()">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div *ngFor="let report of items; let i=index" id="{{report.$key}}" class="tab-pane fade">
+      <sh-report-general [general]="reports[i].general"></sh-report-general>
+      <sh-report-corpus [corpus]="reports[i].corpus"></sh-report-corpus>
+      <sh-report-cluster [cluster]="reports[i].cluster"></sh-report-cluster>
+    </div>
+  </div>
+</div>

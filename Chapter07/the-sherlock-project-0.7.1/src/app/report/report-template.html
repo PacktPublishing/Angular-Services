@@ -1,0 +1,126 @@
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading{{model.$key}}">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion"
+           href="#collapse{{model.$key}}" aria-expanded="true"
+           [attr.aria-controls]="'collapse'+model.$key">
+          <!--aria-controls="collapseTwo">-->
+          {{model.templateName}}
+        </a>
+        <button class="btn btn-default btn-xs pull-right" type="button"
+                (click)="deleteReportTemplate(model)">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+        <button class="btn btn-default btn-xs pull-right" type="submit"
+                (click)="saveReportTemplate(model)">
+          <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+        </button>
+      </h4>
+    </div>
+    <div id="collapse{{model.$key}}" class="panel-collapse collapse" role="tabpanel"
+         [attr.aria-labelledby]="'heading'+model.$key">
+      <div class="panel-body">
+        <form>
+          <div class="row">
+            <div class="col-md-5">
+              <label>General settings</label>
+              <div class="well well-sm">
+                <label>
+                  Template name:
+                  <input type="text" class="input-sm" name="template-name" [(ngModel)]="model.templateName">
+                </label>
+                <br>
+                <label>Show:</label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="corpus-size" [(ngModel)]="model.corpusSize"/>Corpus Size
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="vocabulary-size" [(ngModel)]="model.vocabularySize"/>Vocabulary Size
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="print-button" [(ngModel)]="model.printButton"/>Print Button
+                </label>
+              </div>
+              <label>Corpus settings</label>
+              <div class="well well-sm">
+                <label>
+                  Top <input type="text" size="1" class="input-sm" name="max-freq-words"
+                             [(ngModel)]="model.maxFreqWords"/> frequent words in the Corpus
+                </label>
+                <br>
+                <label>
+                  Top <input type="text" size="1" class="input-sm" name="max-idfs" [(ngModel)]="model.maxIDFs"/> IDFs in
+                  the Corpus
+                </label>
+                <br>
+                <label>
+                  Article stats:
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="longest-article" [(ngModel)]="model.longestArticle"/>Longest
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="avg-article" [(ngModel)]="model.avgArticleSize"/>Avg. Size
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="shortest-article" [(ngModel)]="model.shortestArticle"/>Shortest
+                </label>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <label>Cluster settings</label>
+              <div class="well well-sm">
+                <dl class="dl-horizontal">
+                  <dt>Show graph for:</dt>
+                  <dd><input type="checkbox" name="root-node"
+                             [(ngModel)]="model.rootNode"/>Root node (Main Keyword)
+                  </dd>
+                  <dd *ngIf="model.rootNode"><input type="checkbox" name="cluster-node"
+                             [(ngModel)]="model.clusterNode"/>Cluster centers (Insight keywords)
+                  </dd>
+                  <dd  *ngIf="model.clusterNode && model.rootNode"><input type="checkbox" name="article-node-show"
+                             [(ngModel)]="model.articleNode.show"/>Article
+                    nodes
+                  </dd>
+                </dl>
+                <div *ngIf="model.clusterNode && model.rootNode && model.articleNode.show">
+                  <dl class="dl-horizontal">
+                    <dt>Show article details:</dt>
+                    <dd>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="article-node-size" [(ngModel)]="model.articleNode.size"/>Article
+                        size
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="article-node-distance" [(ngModel)]="model.articleNode.distance"/>Distance
+                        from cluster center
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="article-node-url" [(ngModel)]="model.articleNode.url"/>URL
+                      </label>
+                    </dd>
+                  </dl>
+                  <hr>
+                  <label>
+                    List of
+                    <input type="text" size="1" class="input-sm" name="max-root-phrase"
+                           [(ngModel)]="model.maxRootPhrases"/>
+                    phrases in the article which contain the root node (Main Keyword)
+                  </label>
+                  <br>
+                  <label>
+                    List of
+                    <input type="text" size="1" class="input-sm" name="max-center-phrase"
+                           [(ngModel)]="model.maxCenterPhrases"/>
+                    phrases in the article which contain the cluster center
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

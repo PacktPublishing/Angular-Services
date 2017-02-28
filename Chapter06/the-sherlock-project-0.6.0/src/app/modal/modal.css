@@ -1,0 +1,9 @@
+.mynetwork {
+  width: 968px;
+  height: 550px;
+  border: 1px solid lightgray;
+}
+.modal-dialog {
+  width:1000px;
+  margin: 5px auto;
+}

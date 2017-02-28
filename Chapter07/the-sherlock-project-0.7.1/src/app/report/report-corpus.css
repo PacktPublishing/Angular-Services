@@ -1,0 +1,206 @@
+.corpus {
+  margin-top: 30px;
+}
+.corpus h1 {
+  font-size: 30px;
+  text-align: center;
+  font-style: oblique;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.corpus p {
+  font-size: 20px;
+  color: #004455;
+  padding: 14px 0;
+}
+.corpus a {
+  float: right;
+  font-size: 12px;
+  color: #225500;
+}
+
+.space {
+  margin-left: 40px;
+}
+#talkbubble1 {
+  margin-bottom: 20px;
+  height: 130px;
+  background: #f4ffb4;
+  background: -webkit-linear-gradient(left, #F4FFB4, #ababab); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #F4FFB4, #ababab); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #F4FFB4, #ababab); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(right, #F4FFB4, #ababab); /* Standard syntax */
+  position: relative;
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+#talkbubble1:before {
+  content:"";
+  position: absolute;
+  right: 100%;
+  top: 5px;
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-right: 25px solid #F4FFB4;
+  border-bottom: 60px solid transparent;
+}
+
+#talkbubble2 {
+  margin-top: 20px;
+  height: 130px;
+  background: #ffed79;
+  background: -webkit-linear-gradient(left, #ffed79, #ababab); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #ffed79, #ababab); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #ffed79, #ababab); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(right, #ffed79, #ababab); /* Standard syntax */
+  position: relative;
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+#talkbubble2:before {
+  content:"";
+  position: absolute;
+  right: 100%;
+  top: 5px;
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-right: 25px solid #ffed79;
+  border-bottom: 60px solid transparent;
+}
+
+#talkbubble3 {
+  margin-top: 20px;
+  height: 130px;
+  background: #ffc08b;
+  background: -webkit-linear-gradient(left, #ffc08b, #ababab); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #ffc08b, #ababab); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #ffc08b, #ababab); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(right, #ffc08b, #ababab); /* Standard syntax */
+  position: relative;
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+#talkbubble3:before {
+  content:"";
+  position: absolute;
+  right: 100%;
+  top: 5px;
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-right: 25px solid #ffc08b;
+  border-bottom: 60px solid transparent;
+}
+
+.circle {
+  padding: 8px;
+  position: relative;
+  background: #ababab;
+  z-index: 10;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+
+.circle-inner {
+  padding: 7px;
+  background: #cbcbcb;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 113px;
+  height: 113px;
+  border-radius: 50%;
+  border: 10px solid #fff;
+}
+
+.spinner {
+  margin: 10px auto 0;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bounce 1.4s infinite ease-in-out both;
+  animation: sk-bounce 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+.spinner2 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin: 15px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #2233aa;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+/*@-webkit-keyframes sk-bouncedelay {*/
+  /*0%, 80%, 100% { -webkit-transform: scale(0) }*/
+  /*40% { -webkit-transform: scale(1.0) }*/
+/*}*/
+
+/*@keyframes sk-bouncedelay {*/
+  /*0%, 80%, 100% {*/
+    /*-webkit-transform: scale(0);*/
+    /*transform: scale(0);*/
+  /*} 40% {*/
+      /*-webkit-transform: scale(1.0);*/
+      /*transform: scale(1.0);*/
+    /*}*/
+/*}*/
+
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+}

@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="col-md-5">
+    <!--<div class="panel panel-default ">-->
+      <!--&lt;!&ndash; Default panel contents &ndash;&gt;-->
+      <!--<div class="panel-heading">Available News Items</div>-->
+      <!--<ul class="list-unstyled">-->
+        <!--<li *ngFor="let item of newsItems">-->
+          <!--<div class="media-right">-->
+            <!--<input type="radio" name="news" (click)="onSelect(item, true)">-->
+            <!--{{item.title}} <a href="{{item.link}}">(read more)</a> <br>-->
+          <!--</div>-->
+        <!--</li>-->
+      <!--</ul>-->
+      <!--<div class="input-group">-->
+        <!--<input type="text" class="form-control" #url placeholder="other news/article url...">-->
+        <!--<span class="input-group-btn">-->
+          <!--<button class="btn btn-default" type="button" (click)="onSelect(url.value, false)">Go!</button>-->
+        <!--</span>-->
+      <!--</div>&lt;!&ndash; /input-group &ndash;&gt;-->
+    <!--</div>-->
+    <!--<div class="panel panel-default ">-->
+      <!--&lt;!&ndash; Default panel contents &ndash;&gt;-->
+      <!--<div class="panel-heading">Nominated keywords for corpus</div>-->
+      <!--<input type="text" [(ngModel)]="supportKeywords" class="form-control" placeholder="Comma separated support keywords">-->
+      <!--<input type="text" [(ngModel)]="mainKeyword" class="form-control" placeholder="Keyword of interest">-->
+      <!--<button type="submit" (click)="buildCorpus()" class="btn btn-default btn-block">Fetch Articles For Corpus</button>-->
+    <!--</div>-->
+    <div class="panel panel-default ">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Nominated keywords for cluster centers</div>
+      <input type="text" [(ngModel)]="mainKeyword" class="form-control" placeholder="Keyword of interest (same as corpus)">
+      <input type="text" [(ngModel)]="clusterKeywords" class="form-control" placeholder="Comma separated cluster keywords">
+      <button type="submit" (click)="buildClusters()" class="btn btn-default btn-block">Build Clusters</button>
+    </div>
+    <div class="panel panel-default ">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Extracted Contents</div>
+      <p class="news-contents">
+        {{evidenceService.article}}
+      </p>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div class="panel panel-default ">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Processed words
+        ( corpus: {{evidenceService.corpusSize}} items
+        - vocabulary: {{evidenceService.vocabularySize}} words )
+        <button class="btn btn-default btn-xs pull-right" type="button" (click)="onIDFs()">Calculate IDFs</button>
+      </div>
+      <!-- Table -->
+      <div class="col-md-7">
+        <table class="table">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Words</th>
+          <th>Counts</th>
+          <th>Normalized</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let w of evidenceService.words; let i=index">
+        <tr>
+          <th>{{i+1}}</th>
+          <td>{{w.word}}</td>
+          <td>{{w.count}}</td>
+          <td>{{w.normalized}}</td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="col-md-5">
+        <table class="table">
+        <thead>
+        <tr>
+          <th>IDF</th>
+          <th>TF-IDF(C)</th>
+          <th>TF-IDF(N)</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let w of evidenceService.words; let i=index">
+        <tr>
+          <td>{{w.idf}}</td>
+          <td>{{w.tfidf_C}}</td>
+          <td>{{w.tfidf_N}}</td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+</div>
+<sh-modal></sh-modal>
+
+<!--<div class="modal-dialog">-->
+  <!--<div class="modal-body modal-content">-->
+    <!--<div class="mynetwork"-->
+         <!--[visNetwork]="visNetwork"-->
+         <!--[visNetworkData]="visNetworkData"-->
+         <!--[visNetworkOptions]="visNetworkOptions"-->
+         <!--(initialized)="networkInitialized()">-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
