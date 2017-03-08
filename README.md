@@ -13,7 +13,10 @@ All of the code is organized into folders. Each folder starts with a number foll
 
 The code will look like the following:
 ```
-
+#import packages into the project
+  from bs4 import BeautifulSoup
+  from urllib.request import urlopen
+import pandas as pd
 ```
 
 A usual front-end development machine with basic hardware configuration, plus latest
